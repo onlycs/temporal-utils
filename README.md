@@ -6,8 +6,9 @@ All packages rely on the use of [temporal-polyfill](https://github.com/fullcalen
 
 ## Packages
 
-- [zod-temporal](./packages/zod-temporal/README.md) - Zod validators for Temporal types.
-- [superjson-temporal](./packages/superjson-temporal/README.md) - SuperJSON serializers for Temporal types.
+- [zod-temporal](./packages/zod-temporal/) - Zod validators for Temporal types.
+- [superjson-temporal](./packages/superjson-temporal/) - SuperJSON serializers for Temporal types.
+- [temporal-interval](./packages/temporal-interval/) - An interval type for Temporal.
 
 ## License
 
