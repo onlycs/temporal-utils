@@ -1,7 +1,9 @@
 import type { SuperJSON } from "superjson";
 import { Temporal } from "temporal-polyfill";
 
-export const registerSuperJSONTemporal = (superjson: SuperJSON): void => {
+export const registerSuperJSONTemporal = (
+  superjson: Pick<SuperJSON, "registerCustom">,
+): void => {
   superjson.registerCustom<Temporal.ZonedDateTime, string>(
     {
       isApplicable: (v): v is Temporal.ZonedDateTime =>

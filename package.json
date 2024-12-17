@@ -11,7 +11,7 @@
     "clean": "turbo run clean",
     "lint": "turbo run lint",
     "watch": "turbo watch build",
-    "test": "turbo run test",
+    "test": "CI=true turbo run test",
     "ci:version": "changeset version",
     "ci:publish": "pnpm publish -r",
     "prepare": "husky"
