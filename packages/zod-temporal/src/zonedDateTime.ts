@@ -8,5 +8,8 @@ export const ZonedDateTime: typeof Temporal.ZonedDateTime =
 
 export type ZonedDateTime = Temporal.ZonedDateTime;
 
+/**
+ * Validates or coerces a string to a `Temporal.ZonedDateTime`.
+ */
 export const zZonedDateTime: ZodTemporal<typeof ZonedDateTime> =
   temporalValidator(ZonedDateTime);

@@ -5,6 +5,9 @@ declare abstract class Class {
   constructor(..._: unknown[]);
 }
 
+/**
+ * A Zod validator for a Temporal class which also parses string inputs.
+ */
 export type ZodTemporal<
   TClass extends typeof Class & {
     from: (arg: string) => InstanceType<TClass>;
@@ -15,6 +18,12 @@ export type ZodTemporal<
   InstanceType<TClass> | string
 >;
 
+/**
+ * Creates a Zod validator for a Temporal class.
+ *
+ * @param cls - The Temporal class to validate.
+ * @returns A Zod validator for the Temporal class.
+ */
 export function temporalValidator<
   TClass extends typeof Class & {
     from: (arg: string) => InstanceType<TClass>;

@@ -5,6 +5,9 @@ import { temporalValidator } from "./temporalValidator.js";
 
 export const Duration: typeof Temporal.Duration = Temporal.Duration;
 
+/**
+ * Validates or coerces a string to a `Temporal.Duration`.
+ */
 export const zDuration: z.ZodType<
   Temporal.Duration,
   z.ZodTypeDef,
