@@ -4,7 +4,21 @@
 
 A formatting function for [Temporal](https://www.npmjs.com/package/temporal-spec) types.
 
-Several Temporal types don't support the `toLocaleString` method, so this package provides a `formatTemporal` function that formats a Temporal type using the `Intl.DateTimeFormat` API.
+Several Temporal types don't support the `toLocaleString` method (i.e., `Temporal.ZonedDateTime`, `Temporal.PlainYearMonth`, and `Temporal.PlainMonthDay`), so this package provides a `formatTemporal` function that formats a Temporal type using the `Intl.DateTimeFormat` API.
+
+## Usage
+
+```typescript
+import { formatTemporal } from "format-temporal";
+
+const plainYearMonth = Temporal.PlainYearMonth.from("2023-05");
+const formatter = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "long",
+});
+const result = formatTemporal(plainYearMonth, formatter);
+console.log(result); // "May 2023"
+```
 
 ## License
 
