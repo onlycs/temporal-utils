@@ -6,6 +6,8 @@ import { zDuration } from "./duration.js";
 import { zInstant } from "./instant.js";
 import { zPlainDate, zPlainDateInstance } from "./plainDate.js";
 import { zPlainDateTime } from "./plainDateTime.js";
+import { zPlainMonthDay, zPlainMonthDayInstance } from "./plainMonthDay.js";
+import { zPlainYearMonth, zPlainYearMonthInstance } from "./plainYearMonth.js";
 import { zZonedDateTime } from "./zonedDateTime.js";
 
 describe("Temporal Zod Schemas", () => {
@@ -17,6 +19,10 @@ describe("Temporal Zod Schemas", () => {
       plainDateInstance: zPlainDateInstance,
       plainDateTime: zPlainDateTime,
       duration: zDuration,
+      plainYearMonth: zPlainYearMonth,
+      plainYearMonthInstance: zPlainYearMonthInstance,
+      plainMonthDay: zPlainMonthDay,
+      plainMonthDayInstance: zPlainMonthDayInstance,
     });
     type InputType = z.input<typeof schema>;
 
@@ -27,6 +33,10 @@ describe("Temporal Zod Schemas", () => {
       plainDateInstance: Temporal.PlainDate.from("2023-01-01"),
       plainDateTime: "2023-01-01T00:00:00",
       duration: "PT1H30M",
+      plainYearMonth: "2023-01",
+      plainYearMonthInstance: Temporal.PlainYearMonth.from("2023-01"),
+      plainMonthDay: "01-01",
+      plainMonthDayInstance: Temporal.PlainMonthDay.from("01-01"),
     } satisfies InputType;
 
     const result = schema.parse(input);
@@ -40,6 +50,14 @@ describe("Temporal Zod Schemas", () => {
       Temporal.PlainDateTime.from(input.plainDateTime),
     );
     expect(result.duration).toEqual(Temporal.Duration.from(input.duration));
+    expect(result.plainYearMonth).toEqual(
+      Temporal.PlainYearMonth.from(input.plainYearMonth),
+    );
+    expect(result.plainYearMonthInstance).toEqual(input.plainYearMonthInstance);
+    expect(result.plainMonthDay).toEqual(
+      Temporal.PlainMonthDay.from(input.plainMonthDay),
+    );
+    expect(result.plainMonthDayInstance).toEqual(input.plainMonthDayInstance);
   });
 
   it("should validate Temporal.Instant", () => {
