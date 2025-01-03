@@ -1,4 +1,4 @@
-# @macalinao/superjson-temporal
+# superjson-temporal
 
 ## 0.0.3
 

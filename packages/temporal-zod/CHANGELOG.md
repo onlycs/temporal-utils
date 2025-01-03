@@ -1,4 +1,4 @@
-# @macalinao/zod-temporal
+# temporal-zod
 
 ## 0.0.4
 
