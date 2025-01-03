@@ -1,15 +1,12 @@
 import { Temporal } from "temporal-polyfill";
-import type { z } from "zod";
 
+import type { ZodTemporal } from "./temporalValidator.js";
 import { temporalValidator } from "./temporalValidator.js";
 
 export const Duration: typeof Temporal.Duration = Temporal.Duration;
 
 /**
- * Validates or coerces a string to a `Temporal.Duration`.
+ * Validates or coerces a string to a {@link Temporal.Duration}.
  */
-export const zDuration: z.ZodType<
-  Temporal.Duration,
-  z.ZodTypeDef,
-  Temporal.Duration | string
-> = temporalValidator(Duration);
+export const zDuration: ZodTemporal<typeof Duration> =
+  temporalValidator(Duration);

@@ -6,7 +6,7 @@ import { temporalValidator } from "./temporalValidator.js";
 export const Instant: typeof Temporal.Instant = Temporal.Instant;
 
 /**
- * Validates or coerces a string or Date to a `Temporal.Instant`.
+ * Validates or coerces a string or Date to a {@link Temporal.Instant}.
  */
 export const zInstant: z.ZodType<
   Temporal.Instant,

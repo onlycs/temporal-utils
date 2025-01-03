@@ -7,7 +7,7 @@ import { temporalValidator } from "./temporalValidator.js";
 export const PlainDate: typeof Temporal.PlainDate = Temporal.PlainDate;
 
 /**
- * Validates or coerces a string to a `Temporal.PlainDate`.
+ * Validates or coerces a string to a {@link Temporal.PlainDate}.
  */
 export const zPlainDate: ZodTemporal<typeof PlainDate> =
   temporalValidator(PlainDate);
