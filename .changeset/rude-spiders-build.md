@@ -3,4 +3,5 @@
 "zod-temporal": patch
 ---
 
-Remove scope from superjson-temporal and zod-temporal
+- Remove scope from superjson-temporal and zod-temporal
+- Add format-temporal
