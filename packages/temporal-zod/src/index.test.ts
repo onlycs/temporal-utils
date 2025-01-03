@@ -20,14 +20,14 @@ describe("Temporal Zod Schemas", () => {
     });
     type InputType = z.input<typeof schema>;
 
-    const input: InputType = {
+    const input = {
       zonedDateTime: "2023-05-15T13:45:30+08:00[Asia/Manila]",
       instant: "2023-01-01T00:00:00Z",
       plainDate: "2023-01-01",
       plainDateInstance: Temporal.PlainDate.from("2023-01-01"),
       plainDateTime: "2023-01-01T00:00:00",
       duration: "PT1H30M",
-    };
+    } satisfies InputType;
 
     const result = schema.parse(input);
     expect(result.zonedDateTime).toEqual(
