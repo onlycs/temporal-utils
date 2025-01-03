@@ -1,4 +1,4 @@
-# @macalinao/superjson-temporal
+# superjson-temporal
 
 <a href="https://www.npmjs.com/package/superjson-temporal"><img alt="NPM version" src="https://img.shields.io/npm/v/superjson-temporal.svg?style=for-the-badge&labelColor=000000"></a>
 
