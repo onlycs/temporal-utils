@@ -29,20 +29,23 @@ export const formatTemporal = (
   temporal: TemporalFormattable,
   format: Intl.DateTimeFormat,
 ): string => {
-  return temporal[Symbol.toStringTag] === "Temporal.ZonedDateTime"
-    ? temporal.toLocaleString(undefined, {
+  switch (temporal[Symbol.toStringTag]) {
+    case "Temporal.ZonedDateTime":
+      return temporal.toLocaleString(undefined, {
         ...(format.resolvedOptions() as Intl.DateTimeFormatOptions),
         timeZone: undefined,
-      })
-    : temporal[Symbol.toStringTag] === "Temporal.PlainYearMonth"
-      ? (temporal as Temporal.PlainYearMonth).toLocaleString(undefined, {
-          ...(format.resolvedOptions() as Intl.DateTimeFormatOptions),
-          calendar: (temporal as Temporal.PlainYearMonth).calendarId,
-        })
-      : temporal[Symbol.toStringTag] === "Temporal.PlainMonthDay"
-        ? (temporal as Temporal.PlainMonthDay).toLocaleString(undefined, {
-            ...(format.resolvedOptions() as Intl.DateTimeFormatOptions),
-            calendar: (temporal as Temporal.PlainMonthDay).calendarId,
-          })
-        : format.format(temporal);
+      });
+    case "Temporal.PlainYearMonth":
+      return (temporal as Temporal.PlainYearMonth).toLocaleString(undefined, {
+        ...(format.resolvedOptions() as Intl.DateTimeFormatOptions),
+        calendar: (temporal as Temporal.PlainYearMonth).calendarId,
+      });
+    case "Temporal.PlainMonthDay":
+      return (temporal as Temporal.PlainMonthDay).toLocaleString(undefined, {
+        ...(format.resolvedOptions() as Intl.DateTimeFormatOptions),
+        calendar: (temporal as Temporal.PlainMonthDay).calendarId,
+      });
+    default:
+      return format.format(temporal);
+  }
 };
