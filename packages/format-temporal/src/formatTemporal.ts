@@ -4,7 +4,9 @@ import type { Intl, Temporal } from "temporal-spec";
  * A type that can be formatted using {@link formatTemporal}.
  */
 export type TemporalFormattable =
+  | Temporal.Instant
   | Temporal.PlainYearMonth
+  | Temporal.PlainMonthDay
   | Temporal.PlainDateTime
   | Temporal.PlainDate
   | Temporal.PlainTime
@@ -34,5 +36,10 @@ export const formatTemporal = (
           ...(format.resolvedOptions() as Intl.DateTimeFormatOptions),
           calendar: (temporal as Temporal.PlainYearMonth).calendarId,
         })
-      : format.format(temporal);
+      : temporal[Symbol.toStringTag] === "Temporal.PlainMonthDay"
+        ? (temporal as Temporal.PlainMonthDay).toLocaleString(undefined, {
+            ...(format.resolvedOptions() as Intl.DateTimeFormatOptions),
+            calendar: (temporal as Temporal.PlainMonthDay).calendarId,
+          })
+        : format.format(temporal);
 };

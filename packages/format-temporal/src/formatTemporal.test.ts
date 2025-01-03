@@ -66,4 +66,29 @@ describe("formatTemporal", () => {
     const result = formatTemporal(zonedDateTime, formatter);
     expect(result).toBe("May 15, 2023 at 1:45:30 PM Philippine Standard Time");
   });
+
+  it("should format Temporal.Instant correctly", () => {
+    const instant = Temporal.Instant.fromEpochMilliseconds(1714857930000);
+    const formatter = new Intl.DateTimeFormat("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      timeZone: "UTC",
+    });
+    const result = formatTemporal(instant, formatter);
+    expect(result).toBe("May 4, 2024");
+  });
+
+  it("should format Temporal.PlainMonthDay correctly", () => {
+    const plainMonthDay = Temporal.PlainMonthDay.from({
+      month: 5,
+      day: 15,
+    });
+    const formatter = new Intl.DateTimeFormat("en-US", {
+      month: "long",
+      day: "numeric",
+    });
+    const result = formatTemporal(plainMonthDay, formatter);
+    expect(result).toBe("May 15");
+  });
 });
