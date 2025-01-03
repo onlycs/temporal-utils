@@ -1,5 +1,5 @@
 {
-  "name": "@macalinao/zod-temporal",
+  "name": "zod-temporal",
   "description": "Zod validators for Temporal types.",
   "author": "Ian Macalinao <me@ianm.com>",
   "version": "0.0.3",

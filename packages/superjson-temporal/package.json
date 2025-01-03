@@ -1,5 +1,5 @@
 {
-  "name": "@macalinao/superjson-temporal",
+  "name": "superjson-temporal",
   "description": "SuperJSON serializers/deserializers for Temporal types.",
   "author": "Ian Macalinao <me@ianm.com>",
   "version": "0.0.2",
