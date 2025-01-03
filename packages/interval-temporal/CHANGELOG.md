@@ -1,4 +1,4 @@
-# @macalinao/temporal-interval
+# interval-temporal
 
 ## 0.0.2
 

@@ -13,7 +13,7 @@ For more detailed documentation, see the [API docs](https://temporal.ianm.com).
 - [format-temporal](https://github.com/macalinao/temporal-utils/tree/master/packages/format-temporal) - A formatting function for Temporal types.
 - [temporal-zod](https://github.com/macalinao/temporal-utils/tree/master/packages/temporal-zod) - Zod validators for Temporal types.
 - [superjson-temporal](https://github.com/macalinao/temporal-utils/tree/master/packages/superjson-temporal) - SuperJSON serializers for Temporal types.
-- [temporal-interval](https://github.com/macalinao/temporal-utils/tree/master/packages/temporal-interval) - An interval type for Temporal.
+- [interval-temporal](https://github.com/macalinao/temporal-utils/tree/master/packages/interval-temporal) - An interval type for Temporal.
 
 ## License
 
