@@ -104,7 +104,7 @@ importers:
         specifier: ^2.1.8
         version: 2.1.8
 
-  packages/zod-temporal:
+  packages/temporal-zod:
     dependencies:
       tslib:
         specifier: ^2.8.1
