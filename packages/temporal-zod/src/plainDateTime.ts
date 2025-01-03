@@ -1,13 +1,22 @@
 import { Temporal } from "temporal-polyfill";
+import type { z } from "zod";
 
 import type { ZodTemporal } from "./temporalValidator.js";
-import { temporalValidator } from "./temporalValidator.js";
+import { temporalValidators } from "./temporalValidator.js";
 
 export const PlainDateTime: typeof Temporal.PlainDateTime =
   Temporal.PlainDateTime;
 
+const validators = temporalValidators(PlainDateTime);
+
 /**
- * Validates or coerces a string to a `Temporal.PlainDateTime`.
+ * Validates or coerces a string to a {@link Temporal.PlainDateTime}.
  */
 export const zPlainDateTime: ZodTemporal<typeof PlainDateTime> =
-  temporalValidator(PlainDateTime);
+  validators.coerce;
+
+/**
+ * Validates that the value is an instance of {@link Temporal.PlainDateTime}.
+ */
+export const zPlainDateTimeInstance: z.ZodType<Temporal.PlainDateTime> =
+  validators.instance;

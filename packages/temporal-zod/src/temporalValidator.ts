@@ -19,28 +19,34 @@ export type ZodTemporal<
 >;
 
 /**
- * Creates a Zod validator for a Temporal class.
+ * Creates Zod validators for a Temporal class.
  *
  * @param cls - The Temporal class to validate.
- * @returns A Zod validator for the Temporal class.
+ * @returns Two Zod validators for the Temporal class: `coerce` for coercing strings to the Temporal class, and `instance` for validating that the value is an instance of the Temporal class.
  */
-export function temporalValidator<
+export function temporalValidators<
   TClass extends typeof Class & {
     from: (arg: string) => InstanceType<TClass>;
   },
->(cls: TClass): ZodTemporal<TClass> {
-  return z.union([
-    z.instanceof(cls),
-    z.string().transform((value, ctx) => {
-      try {
-        return cls.from(value);
-      } catch (error: unknown) {
-        ctx.addIssue({
-          code: z.ZodIssueCode.invalid_date,
-          message: `Invalid ${cls.name}: ${(error as { message?: string }).message ?? "unknown error"}`,
-        });
-        return z.NEVER;
-      }
-    }),
-  ]);
+>(
+  cls: TClass,
+): { coerce: ZodTemporal<TClass>; instance: z.ZodType<InstanceType<TClass>> } {
+  const instance = z.instanceof(cls);
+  return {
+    instance,
+    coerce: z.union([
+      instance,
+      z.string().transform((value, ctx) => {
+        try {
+          return cls.from(value);
+        } catch (error: unknown) {
+          ctx.addIssue({
+            code: z.ZodIssueCode.invalid_date,
+            message: `Invalid ${cls.name}: ${(error as { message?: string }).message ?? "unknown error"}`,
+          });
+          return z.NEVER;
+        }
+      }),
+    ]),
+  };
 }
