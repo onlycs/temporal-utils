@@ -13,7 +13,7 @@ export type TemporalFormattable =
   | Temporal.ZonedDateTime;
 
 /**
- * Formats a {@link TemporalFormattable} with the provided format.
+ * Formats a {@link TemporalFormattable} with the provided {@link Intl.DateTimeFormat}.
  *
  * One should use this and avoid using {@link Intl.DateTimeFormat#format} directly, since
  * not all Temporal types are compatible with it.
@@ -26,6 +26,12 @@ export const formatTemporal = (
   temporal: TemporalFormattable,
   format: Intl.DateTimeFormat,
 ): string => {
+  // Three types of Temporal objects cannot be directly formatted with Intl.DateTimeFormat#format:
+  // - Temporal.ZonedDateTime
+  // - Temporal.PlainYearMonth
+  // - Temporal.PlainMonthDay
+  // This function formats these other types by calling their `toLocaleString` method directly.
+
   return temporal[Symbol.toStringTag] === "Temporal.ZonedDateTime"
     ? temporal.toLocaleString(undefined, {
         ...(format.resolvedOptions() as Intl.DateTimeFormatOptions),
