@@ -22,7 +22,7 @@ export const getTemporalType = (
   value: TemporalComparable,
 ): TemporalComparableStringTag => value[Symbol.toStringTag];
 
-type TemporalComparator<T extends TemporalComparable> = (
+export type TemporalComparator<T extends TemporalComparable> = (
   a: T,
   b: T,
 ) => -1 | 0 | 1;

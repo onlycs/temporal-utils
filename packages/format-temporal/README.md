@@ -1,8 +1,10 @@
-# @macalinao/temporal-interval
+# format-temporal
 
-<a href="https://www.npmjs.com/package/@macalinao/temporal-interval"><img alt="NPM version" src="https://img.shields.io/npm/v/@macalinao/temporal-interval.svg?style=for-the-badge&labelColor=000000"></a>
+<a href="https://www.npmjs.com/package/format-temporal"><img alt="NPM version" src="https://img.shields.io/npm/v/format-temporal.svg?style=for-the-badge&labelColor=000000"></a>
 
-An interval type for Temporal. Also contains helpers for comparing and sorting Temporal objects.
+A formatting function for [Temporal](https://www.npmjs.com/package/temporal-spec) types.
+
+Several Temporal types don't support the `toLocaleString` method, so this package provides a `formatTemporal` function that formats a Temporal type using the `Intl.DateTimeFormat` API.
 
 ## License
 
