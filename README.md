@@ -4,6 +4,10 @@ A collection of TypeScript utilities for the [TC39 Temporal proposal](https://tc
 
 All packages rely on the use of [temporal-polyfill](https://github.com/fullcalendar/temporal-polyfill). Packages use `instanceof` checks to determine if a type is supported, so one must ensure to use that exact polyfill.
 
+## Documentation
+
+For more detailed documentation, see the [API docs](https://temporal.ianm.com).
+
 ## Packages
 
 - [format-temporal](https://github.com/macalinao/temporal-utils/tree/master/packages/format-temporal) - A formatting function for Temporal types.
