@@ -23,6 +23,8 @@ jobs:
         run: pnpm build
       - name: Lint
         run: pnpm lint
+      - name: TypeDoc
+        run: pnpm typedoc
       - name: Deploy documentation
         uses: peaceiris/actions-gh-pages@v4
         with:
