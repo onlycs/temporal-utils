@@ -6,10 +6,10 @@ All packages rely on the use of [temporal-polyfill](https://github.com/fullcalen
 
 ## Packages
 
-- [format-temporal](./packages/format-temporal/) - A formatting function for Temporal types.
-- [temporal-zod](./packages/temporal-zod/) - Zod validators for Temporal types.
-- [superjson-temporal](./packages/superjson-temporal/) - SuperJSON serializers for Temporal types.
-- [temporal-interval](./packages/temporal-interval/) - An interval type for Temporal.
+- [format-temporal](https://github.com/macalinao/temporal-utils/tree/master/packages/format-temporal) - A formatting function for Temporal types.
+- [temporal-zod](https://github.com/macalinao/temporal-utils/tree/master/packages/temporal-zod) - Zod validators for Temporal types.
+- [superjson-temporal](https://github.com/macalinao/temporal-utils/tree/master/packages/superjson-temporal) - SuperJSON serializers for Temporal types.
+- [temporal-interval](https://github.com/macalinao/temporal-utils/tree/master/packages/temporal-interval) - An interval type for Temporal.
 
 ## License
 
