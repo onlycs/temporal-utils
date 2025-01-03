@@ -4,6 +4,8 @@
 
 A formatting function for [Temporal](https://www.npmjs.com/package/temporal-spec) types.
 
+## Motivation
+
 Several Temporal types don't support the `toLocaleString` method (i.e., `Temporal.ZonedDateTime`, `Temporal.PlainYearMonth`, and `Temporal.PlainMonthDay`), so this package provides a `formatTemporal` function that formats a Temporal type using the `Intl.DateTimeFormat` API.
 
 ## Usage
