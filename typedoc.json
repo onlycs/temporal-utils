@@ -6,6 +6,5 @@
   "entryPointStrategy": "packages",
   "packageOptions": {
     "entryPoints": ["src/index.ts"]
-  },
-  "cname": "temporal.ianm.com"
+  }
 }
