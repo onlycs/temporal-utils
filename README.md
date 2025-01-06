@@ -11,9 +11,10 @@ For more detailed documentation, see the [API docs](https://temporal.ianm.com).
 ## Packages
 
 - [format-temporal](https://github.com/macalinao/temporal-utils/tree/master/packages/format-temporal) - A formatting function for Temporal types.
-- [temporal-zod](https://github.com/macalinao/temporal-utils/tree/master/packages/temporal-zod) - Zod validators for Temporal types.
-- [superjson-temporal](https://github.com/macalinao/temporal-utils/tree/master/packages/superjson-temporal) - SuperJSON serializers for Temporal types.
 - [interval-temporal](https://github.com/macalinao/temporal-utils/tree/master/packages/interval-temporal) - An interval type for Temporal.
+- [parse-temporal](https://github.com/macalinao/temporal-utils/tree/master/packages/parse-temporal) - Parse Temporal types from strings.
+- [superjson-temporal](https://github.com/macalinao/temporal-utils/tree/master/packages/superjson-temporal) - SuperJSON serializers for Temporal types.
+- [temporal-zod](https://github.com/macalinao/temporal-utils/tree/master/packages/temporal-zod) - Zod validators for Temporal types.
 
 ## License
 
