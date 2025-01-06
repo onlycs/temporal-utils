@@ -25,6 +25,9 @@ importers:
       typedoc:
         specifier: ^0.27.6
         version: 0.27.6(typescript@5.7.2)
+      vitest:
+        specifier: ^2.1.8
+        version: 2.1.8
 
   packages/format-temporal:
     dependencies:
