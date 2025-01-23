@@ -14,6 +14,7 @@ For more detailed documentation, see the [API docs](https://temporal.ianm.com).
 - [interval-temporal](https://github.com/macalinao/temporal-utils/tree/master/packages/interval-temporal) - An interval type for Temporal.
 - [parse-temporal](https://github.com/macalinao/temporal-utils/tree/master/packages/parse-temporal) - Parse Temporal types from strings.
 - [superjson-temporal](https://github.com/macalinao/temporal-utils/tree/master/packages/superjson-temporal) - SuperJSON serializers for Temporal types.
+- [temporal-quarter-fns](https://github.com/macalinao/temporal-utils/tree/master/packages/temporal-quarter-fns) - Functions for working with quarters in Temporal.
 - [temporal-zod](https://github.com/macalinao/temporal-utils/tree/master/packages/temporal-zod) - Zod validators for Temporal types.
 
 ## License
