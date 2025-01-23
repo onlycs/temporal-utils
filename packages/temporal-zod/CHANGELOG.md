@@ -1,5 +1,12 @@
 # temporal-zod
 
+## 0.1.0
+
+### Minor Changes
+
+- e38edef: Move base validators to temporal-zod/base
+- cc7297a: Bump dependencies
+
 ## 0.0.5
 
 ### Patch Changes
