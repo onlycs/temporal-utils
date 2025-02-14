@@ -1,5 +1,15 @@
 # parse-temporal
 
+## 0.2.0
+
+### Minor Changes
+
+- c726b05: Bump all dependencies
+
+### Patch Changes
+
+- cd8d632: Fix peer deps for parse-temporal temporal-polyfill
+
 ## 0.1.0
 
 ### Minor Changes
