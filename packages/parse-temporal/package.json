@@ -55,6 +55,7 @@
     "*.{md,json}": "prettier --write"
   },
   "peerDependencies": {
-    "temporal-spec": "^0.2.4"
+    "temporal-spec": "^0.2.4",
+    "temporal-polyfill": "^0.2.5"
   }
 }
