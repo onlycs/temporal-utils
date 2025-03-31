@@ -15,8 +15,8 @@ describe("registerSuperJSONTemporal", () => {
       zonedDateTime,
       plainDate: zonedDateTime.toPlainDate(),
       plainDateTime: zonedDateTime.toPlainDateTime(),
-      plainMonthDay: zonedDateTime.toPlainMonthDay(),
-      plainYearMonth: zonedDateTime.toPlainYearMonth(),
+      plainMonthDay: zonedDateTime.toPlainDate().toPlainMonthDay(),
+      plainYearMonth: zonedDateTime.toPlainDate().toPlainYearMonth(),
       plainTime: zonedDateTime.toPlainTime(),
       duration: zonedDateTime.toPlainDateTime().since({
         year: 2021,

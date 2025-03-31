@@ -32,17 +32,17 @@ export const formatTemporal = (
   switch (temporal[Symbol.toStringTag]) {
     case "Temporal.ZonedDateTime":
       return temporal.toLocaleString(undefined, {
-        ...(format.resolvedOptions() as Intl.DateTimeFormatOptions),
+        ...(format.resolvedOptions() as globalThis.Intl.DateTimeFormatOptions),
         timeZone: undefined,
       });
     case "Temporal.PlainYearMonth":
       return (temporal as Temporal.PlainYearMonth).toLocaleString(undefined, {
-        ...(format.resolvedOptions() as Intl.DateTimeFormatOptions),
+        ...(format.resolvedOptions() as globalThis.Intl.DateTimeFormatOptions),
         calendar: (temporal as Temporal.PlainYearMonth).calendarId,
       });
     case "Temporal.PlainMonthDay":
       return (temporal as Temporal.PlainMonthDay).toLocaleString(undefined, {
-        ...(format.resolvedOptions() as Intl.DateTimeFormatOptions),
+        ...(format.resolvedOptions() as globalThis.Intl.DateTimeFormatOptions),
         calendar: (temporal as Temporal.PlainMonthDay).calendarId,
       });
     default:

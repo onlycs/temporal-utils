@@ -32,10 +32,9 @@ export function getQuarter(
     | Temporal.PlainDate
     | Temporal.PlainYearMonth
     | Temporal.PlainDateTime
-    | Temporal.PlainMonthDay
     | Temporal.ZonedDateTime,
 ): 1 | 2 | 3 | 4 {
-  const quarter = Math.trunc((date.getISOFields().isoMonth - 1) / 3) + 1;
+  const quarter = Math.trunc((date.month - 1) / 3) + 1;
   if (quarter < 1 || quarter > 4) {
     throw new Error("Invalid quarter");
   }
