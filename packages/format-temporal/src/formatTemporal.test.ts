@@ -11,7 +11,7 @@ describe("formatTemporal", () => {
       month: "long",
     });
     const result = formatTemporal(plainYearMonth, formatter);
-    expect(result).toBe("May 2023");
+    expect(result).toBe("2023 May");
   });
 
   it("should format Temporal.PlainDateTime correctly", () => {

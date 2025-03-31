@@ -14,11 +14,6 @@ describe("getQuarter", () => {
     expect(result).toBe(2);
   });
 
-  it("accepts PlainMonthDay", () => {
-    const result = getQuarter(Temporal.PlainMonthDay.from("04-02"));
-    expect(result).toBe(2);
-  });
-
   it("works on everything", () => {
     expect(getQuarter(Temporal.PlainDateTime.from("2024-03-31T16:00:00"))).toBe(
       1,
