@@ -1,5 +1,11 @@
 # temporal-zod
 
+## 0.3.1
+
+### Patch Changes
+
+- 9a17427: Allow temporal-polyfill 0.2
+
 ## 0.3.0
 
 ### Minor Changes
