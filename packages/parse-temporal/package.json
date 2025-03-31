@@ -56,6 +56,6 @@
   },
   "peerDependencies": {
     "temporal-polyfill": "^0.2.5",
-    "temporal-spec": "^0.2.4"
+    "temporal-spec": "^0.3.0"
   }
 }
