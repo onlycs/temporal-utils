@@ -25,7 +25,7 @@
   },
   "peerDependencies": {
     "superjson": "^2.2.2",
-    "temporal-polyfill": "^0.2.5"
+    "temporal-polyfill": "^0.2 || ^0.3"
   },
   "devDependencies": {
     "@macalinao/eslint-config": "^4.1.8",
