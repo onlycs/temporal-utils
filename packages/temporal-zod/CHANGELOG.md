@@ -1,5 +1,11 @@
 # temporal-zod
 
+## 0.3.2
+
+### Patch Changes
+
+- 0f0519c: Update dependencies
+
 ## 0.3.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # format-temporal
 
+## 0.3.1
+
+### Patch Changes
+
+- 0f0519c: Update dependencies
+
 ## 0.3.0
 
 ### Minor Changes
